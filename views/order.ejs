@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <form action="/order" method="POST">
+      <label>Customer's name:</label>
+      <input type="text" id="bet" name="customerName" />
+
+      <!-- <label>Quantity</label>
+      <select name="quantity" multiple>
+        <option value="One">One</option>
+        <option value="Two">Two</option>
+        <option value="Three">Three</option>
+        <option value="Four">Four</option>
+        <option value="Five">Five</option>
+        <option value="Six">Six</option>
+        <option value="Seven">Seven</option>
+        <option value="Eight">Eight</option>
+        <option value="Nine">Nine</option>
+        <option value="Ten">Ten</option>
+      </select> -->
+      <!-- 
+      <ejs-multiselect
+        id="multiselectelement"
+        [dataSource]="sportsData"
+        [fields]="fields"
+        [(value)]="value"
+        [placeholder]="placeholder"
+        (select)="select($event)"
+        (destroyed)="onDestroyed($event)"
+        (change)="OnChange($event)"
+      ></ejs-multiselect> -->
+
+      <label>Size</label>
+      <select name="size" multiple>
+        <option value="Grande">Grande</option>
+        <option value="Medium">Medium</option>
+        <option value="Small">Small</option>
+      </select>
+
+      <label>Drink</label>
+      <select name="drinkType" multiple>
+        <option value="Coffee">Coffee</option>
+        <option value="Tea">Tea</option>
+        <option value="Juice">Juice</option>
+      </select>
+
+      <div class="multiselect">
+        <div class="selectBox" onclick="showCheckboxes()">
+          <select>
+            <option>Coffee</option>
+          </select>
+          <div class="overSelect"></div>
+        </div>
+        <div id="checkboxes">
+          <label for="one">
+            <input class="number" type="number" id="one" />Small</label
+          >
+          <label for="two">
+            <input class="number" type="number" id="two" />Medium</label
+          >
+          <label for="three">
+            <input class="number" type="number" id="three" />Large</label
+          >
+        </div>
+      </div>
+
+      <button type="sumbit">Submit</button>
+    </form>
+
+    <a href="/">Home</a>
+
+    <h2>Orders</h2>
+
+    <style>
+      .multiselect {
+        width: 200px;
+      }
+
+      .number {
+        position: relative;
+        width: 20px;
+      }
+
+      .number select {
+        width: 100%;
+        font-weight: bold;
+      }
+
+      .overSelect {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+      }
+
+      #checkboxes {
+        display: none;
+        border: 1px #dadada solid;
+      }
+
+      #checkboxes label {
+        display: block;
+      }
+
+      #checkboxes label:hover {
+        background-color: #1e90ff;
+      }
+    </style>
+    <script>
+      var expanded = false;
+
+      function showCheckboxes() {
+        var checkboxes = document.getElementById("checkboxes");
+        if (!expanded) {
+          checkboxes.style.display = "block";
+          expanded = true;
+        } else {
+          checkboxes.style.display = "none";
+          expanded = false;
+        }
+      }
+    </script>
+
+    <script src="main.js"></script>
+  </body>
+</html>
