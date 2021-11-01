@@ -5,67 +5,145 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mukta:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <link rel='stylesheet' href='style.css'>
-    <link rel='stylesheet' href='pos.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mukta:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="pos.css" />
   </head>
 
   <body>
-        <nav>
-          <a href="/login" class="btn btn-default topButton login"><span class="fa fa-user"></span> Barista Login</a>
-          <a href="/signup" class="btn btn-default topButton"><span class="fa fa-user"></span>Signup</a>
-        </nav>
+    <nav>
+      <a href="/login" class="btn btn-default topButton login"
+        ><span class="fa fa-user"></span> Barista Login</a
+      >
+      <a href="/signup" class="btn btn-default topButton"
+        ><span class="fa fa-user"></span>Signup</a
+      >
+    </nav>
 
     <main>
       <h1>Menu:</h1>
-      <section class='choices'>
+      <section class="choices">
         <div id="coffee">
           <h3>Coffee</h3>
-          <button class="drink" id="coffeeSmall" value="2.50" data-order="Small coffee"><span>Small coffee</span><br><br>$2.50 </button>
-          <button class="drink" id="coffeeMedium" value="3.50" data-order="Medium coffee"><span>Medium coffee</span><br><br>$3.50</button>
-          <button class="drink" id="coffeeLarge" value="4.50" data-order="Large coffee"><span>Large coffee</span><br><br>$4.50</button>
+          <button
+            class="drink"
+            id="coffeeSmall"
+            value="2.50"
+            data-order="Small coffee"
+          >
+            <span>Small coffee</span><br /><br />$2.50
+          </button>
+          <button
+            class="drink"
+            id="coffeeMedium"
+            value="3.50"
+            data-order="Medium coffee"
+          >
+            <span>Medium coffee</span><br /><br />$3.50
+          </button>
+          <button
+            class="drink"
+            id="coffeeLarge"
+            value="4.50"
+            data-order="Large coffee"
+          >
+            <span>Large coffee</span><br /><br />$4.50
+          </button>
         </div>
         <div id="tea">
           <h3>Tea</h3>
-          <button class="drink" id="teaSmall" value="2.50" data-order="Small tea"><span>Small tea</span><br><br>$2.50</button>
-          <button class="drink" id="teaMedium" value="3.50" data-order="Medium tea"><span>Medium tea</span><br><br>$3.50</button>
-          <button class="drink" id="teaLarge" value="4.50" data-order="Large tea"><span>Large tea</span><br><br>$4.50</button>
+          <button
+            class="drink"
+            id="teaSmall"
+            value="2.50"
+            data-order="Small tea"
+          >
+            <span>Small tea</span><br /><br />$2.50
+          </button>
+          <button
+            class="drink"
+            id="teaMedium"
+            value="3.50"
+            data-order="Medium tea"
+          >
+            <span>Medium tea</span><br /><br />$3.50
+          </button>
+          <button
+            class="drink"
+            id="teaLarge"
+            value="4.50"
+            data-order="Large tea"
+          >
+            <span>Large tea</span><br /><br />$4.50
+          </button>
         </div>
         <div id="juice">
           <h3>Juice</h3>
-          <button class="drink" id="juiceSmall" value="3.50" data-order="Small juice"><span>Small juice</span><br><br>$3.50</button>
-          <button class="drink" id="juiceMedium" value="4.50" data-order="Medium juice"><span>Medium juice</span><br><br>$4.50</button>
-          <button class="drink" id="juiceLarge" value="5.50" data-order="Large juice"><span>Large juice</span><br><br>$5.50</button>
+          <button
+            class="drink"
+            id="juiceSmall"
+            value="3.50"
+            data-order="Small juice"
+          >
+            <span>Small juice</span><br /><br />$3.50
+          </button>
+          <button
+            class="drink"
+            id="juiceMedium"
+            value="4.50"
+            data-order="Medium juice"
+          >
+            <span>Medium juice</span><br /><br />$4.50
+          </button>
+          <button
+            class="drink"
+            id="juiceLarge"
+            value="5.50"
+            data-order="Large juice"
+          >
+            <span>Large juice</span><br /><br />$5.50
+          </button>
         </div>
-      
       </section>
-    
-      <div class='submission'>
-        <label for="customerName" class="customerLabel">Customer's name:</label>
-        <input type="text" id="customerName" required/>
-       
+
+      <div class="submission">
+        <label for="customerName"></label>
+        <input
+          type="text"
+          id="customerName"
+          placeholder="Input customer's name"
+          required
+        />
+
         <div class="orders">
-          <h2>Order summary: </h2>
-          <ul>
-            
-          </ul>
+          <h2>Order summary:</h2>
+          <ul></ul>
           <div class="totalSection">
-            <h2 class="total"><span id = "total"></span></h2>
+            <h2 class="total"><span id="total"></span></h2>
           </div>
         </div>
         <button id="submit" action="submit">Submit</button>
       </div>
     </main>
-    
-  
-    <script src="https://kit.fontawesome.com/58eb5e6d41.js" crossorigin="anonymous"></script>
+
+    <script
+      src="https://kit.fontawesome.com/58eb5e6d41.js"
+      crossorigin="anonymous"
+    ></script>
 
     <script src="order.js"></script>
-
-  
   </body>
 </html>
