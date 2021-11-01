@@ -1,4 +1,4 @@
-module.exports = function (app, passport, db) {
+module.exports = function (app, passport, db, mongodb) {
   // normal routes ===============================================================
 
   // show the home page (will also have our login links)
@@ -11,52 +11,26 @@ module.exports = function (app, passport, db) {
   });
 
   app.post("/order", (req, res) => {
-    db.collection("coffeeOrders").insertOne(
+    console.log(req.body);
+    db.collection("coffeeOrders").insertOne(//method that allows you to insert one, and it won't update the collection
       {
-        customerName: req.body.customerName,
-        size: req.body.size,
-        status: "open",
+      customerName: req.body.name,
+      coffee: req.body.coffee,
+      tea: req.body.tea,
+      juice:req.body.juice,
+      total: req.body.total,
+      status:false,
+      barista:null
       },
       (err, result) => {
         if (err) return console.log(err);
         console.log(
-          `saved to database: ${req.body.customerName} ${req.body.size}`
+          `saved to database: ${req.body.customerName} ${req.body.coffeeSmall}`
         );
         res.redirect("/order");
       }
     );
   });
-
-  // app.post('/game', (req, res) => {
-  //   let roulette = Math.floor(Math.random() * 3)
-  //   let playerMoney = 0 //starting variables for player and then casino
-  //   let casinoMoney = 0
-  //   let result = roulette === req.body.color ? true : false//this is taking the amount of money the player has bet if they won the match
-  //   let whoWins = result ? 'player Wins' : 'House Wins'
-  //   if (result) {
-  //     playerMoney += req.body.bet
-  //     casinoMoney -= req.body.bet
-  //   } else {
-  //     playerMoney -= req.body.bet
-  //     casinoMoney += req.body.bet
-  //   }
-
-  // db.collection('messages').insertOne({ playerMoney: playerMoney, bet: req.body.bet, casinoMoney: casinoMoney,whoWins:whoWins }, (err, result) => {
-  //   if (err) return console.log(err)
-  //   console.log('saved to database')
-  //   res.send({})
-  // })
-
-  //randomizer between green, red, black
-
-  //Math.floor() method to decide the result of the bet
-
-  //if result === playerColor(?) then player wins
-  //else, player loses
-
-  //add or subtract the wins or losses. how do we preserve and update the total amount lost/won?
-
-  // })
 
   // PROFILE SECTION =========================
   app.get("/profile", isLoggedIn, function (req, res) {
@@ -80,23 +54,20 @@ module.exports = function (app, passport, db) {
   // message board routes ===============================================================
 
   app.put("/coffeeOrders", isLoggedIn, (req, res) => {
-    console.log(req.user);
-    db.collection("coffeeOrders")
-      //target by id when available
-      .findOneAndUpdate(
-        { customerName: req.body.customerName, size: req.body.size },
-        {
+   
+    console.log(req.body);
+    db.collection("coffeeOrders").findOneAndUpdate(
+        { _id: mongodb.ObjectID(req.body.id) }, {
           $set: {
-            status: "complete",
-            email: req.user.local.email,
-          },
-        },
-        {
-          upsert: false,
-        },
-        (err, result) => {
-          if (err) return res.send(err);
-          res.send(result);
+            status: true,
+            barista: req.user.local.email
+          }
+        }, {
+          sort: { _id: -1 },
+          upsert: true
+        }, (err, result) => {
+          if (err) return res.send(err)
+          res.send(result)
         }
       );
   });

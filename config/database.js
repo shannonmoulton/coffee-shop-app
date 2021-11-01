@@ -2,6 +2,6 @@
 module.exports = {
 
 
-    "url" : "mongodb+srv://user0:Clu573R0@cluster0.txgjd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "url" : "mongodb+srv://appdata:appdata@cluster0.ubxqi.mongodb.net/coffeeShop?retryWrites=true&w=majority",
     "dbName": "coffeeShop"
 };
