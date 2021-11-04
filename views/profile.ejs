@@ -52,6 +52,7 @@
                 <th scope="col">Total</th>
                 <th scope="col">Status</th>
                 <th scope="col">Barista</th>
+              
                 
 
               </tr>
@@ -67,8 +68,8 @@
                   <td><%= coffeeOrders[i].customerName %></td>
                   <td><span><%= coffeeOrders[i].coffee %></span> <br>
                       <span><%= coffeeOrders[i].tea %></span><br>
-                      <span><%= coffeeOrders[i].juice %></span>
-                      <span><%= coffeeOrders[i].total %></span> 
+                      <span><%= coffeeOrders[i].juice %></span></td>
+                     <td><span><%= coffeeOrders[i].total %></span> 
                   </td>
 
                   <% if (coffeeOrders[i].status) { %>
